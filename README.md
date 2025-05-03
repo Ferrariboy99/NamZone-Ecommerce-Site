@@ -26,27 +26,36 @@
 
 ---
 
-### Admin Panel - User Management
-![Admin User Management](screenshots/admin-users.png)  
-*Admin interface for managing users with ID verification and proof of residence*
+### Home Page  
+![Home Page](Screenshots/home%20page.png)  
+*Landing page showcasing featured items and search options*
 
-### User Registration
-![User Registration](screenshots/user-register.png)  
-*Registration form with document upload fields*
+### About Us  
+![About Us](Screenshots/about%20us.png)  
+*Information page detailing NamZone's mission and services*
 
-### User Profile
-![User Profile](screenshots/user-profile.png)  
-*User profile showing uploaded documents and verification status*
+### Admin Panel – User Management  
+![Admin Panel](Screenshots/Admin.png)  
+*Admin dashboard for managing user accounts and document verification*
 
-### Document Verification
-![Document Verification](screenshots/document-verification.png)  
-*Admin view of user-submitted documents for verification*
+### User Profile  
+![User Profile](Screenshots/User%20Profile.png)  
+*User profile displaying personal information and uploaded documents*
 
-### User File Upload
-![Mobile View](screenshots/mobile-view.png)  
-*User can uload their proof of residence and id document*
+### Cart  
+![Cart](Screenshots/cart.png)  
+*Shopping cart view showing selected second-hand items for purchase*
+
+### Contact Us  
+![Contact Us](Screenshots/contact%20us.png)  
+*Contact form for users to reach out to NamZone support*
+
+### Document Upload  
+![Document Upload](Screenshots/Documents%20upload.png)  
+*Upload interface for users to submit proof of residence and ID*
 
 ---
+
 
 ## Built With
 
