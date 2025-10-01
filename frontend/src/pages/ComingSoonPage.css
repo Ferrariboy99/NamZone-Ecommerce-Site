@@ -1,0 +1,31 @@
+.coming-soon {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+}
+
+.coming-soon__card {
+  width: min(100%, 540px);
+  padding: clamp(2rem, 6vw, 3rem);
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+  background: rgba(12, 15, 20, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.coming-soon__card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.coming-soon__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-weight: 600;
+}

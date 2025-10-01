@@ -1,88 +1,78 @@
-# NamZone
+# NamZone Commerce Experience
 
-**NamZone** is a proudly Namibian platform dedicated to connecting sellers of quality second-hand goods with interested buyers across the country. Founded on the belief that everyone deserves affordable access to useful items, NamZone simplifies the process of buying and selling pre-owned products in a safe, transparent, and community-driven environment.
+NamZone has evolved from a PHP-powered marketplace into a modern, component-driven React platform. The refreshed experience is built with TypeScript and Vite, delivering a fast, immersive, and mobile-first storefront for discovering elevated second-hand and lifestyle products.
 
 ## Table of Contents
 
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Built With](#built-with)
-- [How to Run the App on a Dev Server](#how-to-run-the-app-on-a-dev-server)
+- [Experience highlights](#experience-highlights)
+- [UI preview](#ui-preview)
+- [Tech stack](#tech-stack)
+- [Getting started](#getting-started)
+- [Legacy reference](#legacy-reference)
 - [Contact](#contact)
 
 ---
 
-## Features
+## Experience highlights
 
-- Secure seller and buyer registration
-- Listing and verification system for items
-- Admin dashboard for managing users and listings
-- Responsive design for mobile and desktop
-- Secure file upload for proof of identity, residence, and payments
-
----
-
-## Screenshots
+- Immersive hero moments with glassmorphism styling and responsive layouts
+- Curated product spotlight, category browsing, and collection highlights
+- Dynamic product filtering, sorting, and grid/list view toggles
+- Detailed product pages with galleries, metadata, and cart interactions
+- Persistent cart management powered by React context
+- Elegant onboarding, profile, and “coming soon” surface areas for future expansion
 
 ---
 
-### Home Page  
-![Home Page](Screenshots/home%20page.png)  
-*Landing page showcasing featured items and search options*
+## UI preview
 
-### About Us  
-![About Us](Screenshots/about%20us.png)  
-*Information page detailing NamZone's mission and services*
-
-### Admin Panel – User Management  
-![Admin Panel](Screenshots/Admin.png)  
-*Admin dashboard for managing user accounts and document verification*
-
-### User Profile  
-![User Profile](Screenshots/User%20Profile.png)  
-*User profile displaying personal information and uploaded documents*
-
-### Cart  
-![Cart](Screenshots/cart.png)  
-*Shopping cart view showing selected second-hand items for purchase*
-
-### Contact Us  
-![Contact Us](Screenshots/contact%20us.png)  
-*Contact form for users to reach out to NamZone support*
-
-### Document Upload  
-![Document Upload](Screenshots/Documents%20upload.png)  
-*Upload interface for users to submit proof of residence and ID*
+> Previous PHP screenshots remain in the `Screenshots/` directory for archival purposes. Launch the development server to explore the redesigned interface interactively.
 
 ---
 
+## Tech stack
 
-## Built With
-
-- **[PHP](https://www.php.net/):** Backend logic and server-side scripting
-- **[Bootstrap](https://getbootstrap.com/):** Frontend CSS framework for responsive UI
-- **[MySQL](https://www.mysql.com/):** Database system for storing user data and item listings
-- **[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):** Markup structure for the web pages
-- **[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS):** Styling and layout
-- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):** Interactivity and client-side functionality
+- **React 18** with **TypeScript** for a type-safe component architecture
+- **Vite** for lightning-fast local development and optimized builds
+- **React Router** for client-side routing between storefront, cart, and account flows
+- Modern CSS with custom gradients, glassmorphism, and responsive grid layouts
 
 ---
 
-## How to Run the App on a Dev Server
+## Getting started
 
-1. Clone this repository to your local machine
-2. Make sure you have Apache, PHP, and MySQL (e.g., XAMPP, LAMP, or MAMP stack) installed
-3. Place the project folder in your web server's root directory (e.g., `htdocs` for XAMPP)
-4. Import the provided SQL file into your MySQL database using phpMyAdmin or the MySQL CLI
-5. Start Apache and MySQL services
-6. Open your browser and go to `http://localhost/NamZone`
+1. Ensure you have **Node.js 18+** installed.
+2. Install dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+The original PHP codebase remains in the repository for reference but is no longer required to preview the new front-end experience.
+
+---
+
+## Legacy reference
+
+Looking for the previous PHP implementation? Core assets remain untouched in the repository root, including:
+
+- Admin panel and authentication flows under `admin/`
+- PHP endpoints for catalog and cart operations
+- SQL scripts inside `database/`
 
 ---
 
 ## Contact
 
-For any inquiries or support, please contact:  
-📧 **festushelaoshatipamba@gmail.com**
+For support or collaboration opportunities, connect with the founding team at **festushelaoshatipamba@gmail.com**.
 
 ---
 

@@ -1,0 +1,111 @@
+.products-page {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+.products-page__header {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: flex-start;
+}
+
+.products-page__header h1 {
+  margin: 0.5rem 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.products-page__header p {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 540px;
+  font-size: 1rem;
+}
+
+.products-page__view {
+  display: inline-flex;
+  padding: 0.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.25rem;
+}
+
+.products-page__view button {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.65rem 1.2rem;
+  cursor: pointer;
+}
+
+.products-page__view .active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.products-page__filters {
+  display: grid;
+  gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: rgba(12, 15, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.products-page__filter-group {
+  display: grid;
+  gap: 1rem;
+}
+
+.products-page__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.products-page__chips button {
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.products-page__chips button.active,
+.products-page__chips button:hover {
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  color: #050608;
+  border-color: transparent;
+}
+
+.products-page__filter-group select {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.products-page__grid {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.products-page__grid--grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.products-page__grid--list {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 900px) {
+  .products-page__header {
+    flex-direction: column;
+  }
+}
