@@ -1,0 +1,27 @@
+.home-page__spotlight {
+  position: relative;
+}
+
+.home-page__spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.home-page__controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .home-page__controls {
+    width: 100%;
+  }
+
+  .home-page__controls .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
