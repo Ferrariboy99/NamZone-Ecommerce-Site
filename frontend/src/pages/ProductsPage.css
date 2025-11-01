@@ -48,15 +48,27 @@
 
 .products-page__filters {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: clamp(1.5rem, 4vw, 2.5rem);
   background: rgba(12, 15, 20, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.products-page__filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
 .products-page__filter-group {
   display: grid;
   gap: 1rem;
+}
+
+.products-page__filter-group--select {
+  min-width: 220px;
 }
 
 .products-page__chips {
@@ -91,6 +103,57 @@
   font-size: 1rem;
 }
 
+.products-page__search-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.products-page__search-group label {
+  font-weight: 600;
+}
+
+.products-page__search-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.products-page__search-control span {
+  color: var(--text-muted);
+}
+
+.products-page__search-control input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.products-page__search-control input:focus {
+  outline: none;
+}
+
+.products-page__search-control input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.products-page__clear {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.products-page__clear:hover {
+  color: #fff;
+}
+
 .products-page__grid {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.75rem);
@@ -104,8 +167,48 @@
   grid-template-columns: 1fr;
 }
 
+.products-page__results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.products-page__reset {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.products-page__reset:hover {
+  color: #fff;
+}
+
+.products-page__empty {
+  display: grid;
+  gap: 1.25rem;
+  justify-items: center;
+  text-align: center;
+  padding: clamp(2rem, 6vw, 3rem);
+  background: rgba(12, 15, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 @media (max-width: 900px) {
   .products-page__header {
     flex-direction: column;
+  }
+
+  .products-page__filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products-page__results {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

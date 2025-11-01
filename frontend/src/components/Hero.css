@@ -1,23 +1,92 @@
 .hero {
+  --hero-accent: var(--primary);
+  --hero-accent-secondary: var(--secondary);
+  --hero-accent-soft: rgba(123, 91, 255, 0.35);
+  --hero-accent-secondary-soft: rgba(0, 198, 255, 0.28);
+  --hero-rotation: 8000ms;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(2rem, 5vw, 4rem);
-  padding: clamp(2.5rem, 6vw, 4rem);
+  padding: clamp(2.75rem, 6vw, 4.5rem);
   margin-top: clamp(2rem, 6vw, 4rem);
   position: relative;
   overflow: hidden;
   background: rgba(10, 12, 18, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(123, 91, 255, 0.35), transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(0, 198, 255, 0.25), transparent 55%);
+  background: radial-gradient(circle at 20% 20%, var(--hero-accent-soft), transparent 60%),
+    radial-gradient(circle at 80% 80%, var(--hero-accent-secondary-soft), transparent 55%);
   opacity: 0.6;
   pointer-events: none;
+  transition: background 0.6s ease;
+}
+
+.hero__tabs {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.hero__tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.hero__tab.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.hero__tab:focus-visible {
+  outline: 2px solid var(--hero-accent);
+  outline-offset: 3px;
+}
+
+.hero__tab-progress {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--hero-accent), var(--hero-accent-secondary));
+  transform-origin: left;
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.hero__tab-progress.is-animating {
+  opacity: 1;
+  animation: heroProgress var(--hero-rotation) linear forwards;
 }
 
 .hero__content {
@@ -82,29 +151,34 @@
   align-items: center;
   justify-items: center;
   gap: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero__orb {
   width: clamp(220px, 35vw, 320px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff, rgba(255, 255, 255, 0))
-      center/150% 150%,
-    linear-gradient(140deg, rgba(123, 91, 255, 0.45), rgba(0, 198, 255, 0.35));
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255, 255, 255, 0)) center/150% 150%,
+    linear-gradient(140deg, var(--hero-accent-soft), var(--hero-accent-secondary-soft));
   filter: blur(0px);
-  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.55), 0 0 80px var(--hero-accent-soft);
   animation: heroPulse 7s ease-in-out infinite;
+  transition: background 0.6s ease, box-shadow 0.6s ease;
 }
 
 .hero__card {
   width: min(100%, 280px);
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 1.5rem;
   display: grid;
   gap: 0.4rem;
   text-align: left;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  transition: transform 0.4s ease, border 0.4s ease, background 0.4s ease;
 }
 
 .hero__card p {
@@ -124,7 +198,12 @@
 }
 
 .hero__card--secondary {
-  background: rgba(0, 198, 255, 0.12);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), var(--hero-accent-secondary-soft));
+}
+
+.hero__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 @keyframes heroPulse {
@@ -144,8 +223,13 @@
     grid-template-columns: 1fr;
   }
 
+  .hero__tabs {
+    justify-content: flex-start;
+  }
+
   .hero__visual {
     justify-items: flex-start;
+    width: 100%;
   }
 }
 
@@ -154,8 +238,22 @@
     padding: 2rem;
   }
 
+  .hero__tabs {
+    margin-bottom: 1rem;
+  }
+
   .hero__cta {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@keyframes heroProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
   }
 }
